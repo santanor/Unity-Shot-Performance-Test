@@ -8,5 +8,5 @@ The second one will create a bag of bullets and will be moving them around the m
 The objetive is to see the change in the performance in the game, using both methods.
 
 
-The code is in the 'Develop' branch, feel free to make any pull request improving my job, but don't forget to explain why your way is better so I can learn from it :P 
+The code is in the 'Develop' branch, feel free to make any pull request improving my work, but don't forget to explain why your way is better so I can learn from it :P 
 ===========================
