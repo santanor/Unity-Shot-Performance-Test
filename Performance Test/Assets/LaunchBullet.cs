@@ -6,7 +6,7 @@ public class LaunchBullet : MonoBehaviour {
 	BagBullets bag;
 	// Use this for initialization
 	void Start () {
-		InvokeRepeating("Launch", 1f, 0.3f);
+		InvokeRepeating("Launch", 1f, 0.2f);
 		bag = FindObjectOfType<BagBullets>();
 	}
 
@@ -15,6 +15,6 @@ public class LaunchBullet : MonoBehaviour {
 		GameObject go = bag.GetBullet();
 		go.transform.position = this.transform.position;
 		go.SetActive(true);
-		bag.ReturnBullet(go, 2f);
+		StartCoroutine(bag.ReturnBullet(go, 1f));
 	}
 }

@@ -32,5 +32,8 @@ public class PlaceTanks : MonoBehaviour {
 
 
 		}
+
+		if(Input.GetKeyUp(KeyCode.Escape))
+			Application.LoadLevel("Main");
 	}
 }

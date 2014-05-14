@@ -13,7 +13,7 @@ public class BagBullets : MonoBehaviour {
 	void Start () {
 		bullets = new Queue<GameObject>();
 		bullet = (GameObject)Resources.Load("Bullet");
-		for(int i = 0; i < 200; i++)
+		for(int i = 0; i < 300; i++)
 		{
 			clonedBullet = (GameObject)Instantiate(bullet, new Vector3(-100,-100,-100), Quaternion.identity);
 			clonedBullet.SetActive(false);
@@ -26,14 +26,14 @@ public class BagBullets : MonoBehaviour {
 		if(bullets.Count > 0)
 			return bullets.Dequeue();
 
-		if(bullets.Count < 50)
+		if(bullets.Count < 20)
 			StartCoroutine(Reload());
 		return GetBullet();
 	}
 
 	public IEnumerator Reload()
 	{
-		for(int i = 0; i < 50; i++)
+		for(int i = 0; i < 20; i++)
 		{
 			clonedBullet = (GameObject)Instantiate(bullet, new Vector3(-100,-100,-100), Quaternion.identity);
 			clonedBullet.SetActive(false);
@@ -42,12 +42,7 @@ public class BagBullets : MonoBehaviour {
 		yield return null;
 	}
 
-	public void ReturnBullet(GameObject go, float seconds)
-	{
-		StartCoroutine(Return (go, seconds));
-	}
-
-	IEnumerator Return(GameObject go, float seconds)
+	public IEnumerator ReturnBullet(GameObject go, float seconds)
 	{
 		yield return new WaitForSeconds(seconds);
 		go.transform.position = new Vector3(-100,-100,-100);
